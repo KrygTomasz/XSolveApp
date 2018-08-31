@@ -11,14 +11,24 @@ import Foundation
 class PodcastListViewModel {
     
     var podcastViewModels: [PodcastViewModel] = [PodcastViewModel]()
+    var completion: () -> Void
     
-    init(completion: @escaping () -> ()) {
+    init(completion: @escaping () -> Void) {
+        self.completion = completion
+        populatePodcasts()
+    }
+    
+    private func populatePodcasts() {
         WebServiceManager.shared.downloadPodcasts { success, podcasts in
             self.podcastViewModels = podcasts.map(PodcastViewModel.init)
             DispatchQueue.main.async {
-                completion()
+                self.completion()
             }
         }
+    }
+    
+    func podcastViewModel(at index: Int) -> PodcastViewModel {
+        return podcastViewModels[index]
     }
     
 }

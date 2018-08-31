@@ -17,6 +17,9 @@
 		2224A50A2139CE9D003069C5 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5092139CE9D003069C5 /* Podcast.swift */; };
 		2224A5112139D8B9003069C5 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A50F2139D8B9003069C5 /* PodcastTableViewCell.swift */; };
 		2224A5122139D8B9003069C5 /* PodcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2224A5102139D8B9003069C5 /* PodcastTableViewCell.xib */; };
+		2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5142139DD1B003069C5 /* SearchListHeader.swift */; };
+		2224A5172139DD59003069C5 /* SearchListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2224A5162139DD59003069C5 /* SearchListHeader.xib */; };
+		2224A5192139E38C003069C5 /* PodcastDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		2224A5092139CE9D003069C5 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		2224A50F2139D8B9003069C5 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		2224A5102139D8B9003069C5 /* PodcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastTableViewCell.xib; sourceTree = "<group>"; };
+		2224A5142139DD1B003069C5 /* SearchListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListHeader.swift; sourceTree = "<group>"; };
+		2224A5162139DD59003069C5 /* SearchListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchListHeader.xib; sourceTree = "<group>"; };
+		2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 			children = (
 				2224A50D2139D86C003069C5 /* Controllers */,
 				2224A50E2139D870003069C5 /* Cells */,
+				2224A5132139DCC0003069C5 /* Headers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				2224A4F12139C8AA003069C5 /* PodcastListTableViewController.swift */,
+				2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -125,6 +133,15 @@
 				2224A5102139D8B9003069C5 /* PodcastTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2224A5132139DCC0003069C5 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				2224A5142139DD1B003069C5 /* SearchListHeader.swift */,
+				2224A5162139DD59003069C5 /* SearchListHeader.xib */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2224A4FA2139C8AC003069C5 /* LaunchScreen.storyboard in Resources */,
+				2224A5172139DD59003069C5 /* SearchListHeader.xib in Resources */,
 				2224A4F72139C8AC003069C5 /* Assets.xcassets in Resources */,
 				2224A5122139D8B9003069C5 /* PodcastTableViewCell.xib in Resources */,
 				2224A4F52139C8AA003069C5 /* Main.storyboard in Resources */,
@@ -199,10 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2224A5192139E38C003069C5 /* PodcastDetailsViewController.swift in Sources */,
 				2224A5072139CE3E003069C5 /* WebServiceManager.swift in Sources */,
 				2224A4F22139C8AA003069C5 /* PodcastListTableViewController.swift in Sources */,
 				2224A5052139CCE6003069C5 /* PodcastListViewModel.swift in Sources */,
 				2224A4F02139C8AA003069C5 /* AppDelegate.swift in Sources */,
+				2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */,
 				2224A5112139D8B9003069C5 /* PodcastTableViewCell.swift in Sources */,
 				2224A50A2139CE9D003069C5 /* Podcast.swift in Sources */,
 			);

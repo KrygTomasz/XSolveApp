@@ -14,15 +14,22 @@ class PodcastListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerCells()
+        prepareTableView()
         self.podcastListViewModel = PodcastListViewModel() {
             self.tableView.reloadData()
         }
     }
     
+    func prepareTableView() {
+        tableView.keyboardDismissMode = .interactive
+        registerCells()
+    }
+    
     func registerCells() {
         let podcastCellNib = UINib(nibName: "PodcastTableViewCell", bundle: nil)
         tableView.register(podcastCellNib, forCellReuseIdentifier: "PodcastTableViewCell")
+        let headerNib = UINib(nibName: "SearchListHeader", bundle: nil)
+        tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "SearchListHeader")
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,6 +46,25 @@ class PodcastListTableViewController: UITableViewController {
         }
         cell.trackNameLabel.text = podcastListViewModel.podcastViewModels[indexPath.row].trackName
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SearchListHeader") as? SearchListHeader else { return UIView() }
+        return header
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 64
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = podcastListViewModel.podcastViewModel(at: indexPath.row)
+        goToPodcastDetails(using: model)
+    }
+    
+    private func goToPodcastDetails(using podcastViewModel: PodcastViewModel) {
+        let vc = PodcastDetailsViewController.getInstance(using: podcastViewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

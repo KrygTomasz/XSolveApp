@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="E0A-xr-PRH" customClass="SearchListHeader" customModule="XSolveApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="110"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zhZ-aV-eOs">
+                    <rect key="frame" x="0.0" y="0.0" width="487" height="110"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oKF-Xn-vci">
+                            <rect key="frame" x="8" y="8" width="471" height="94"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="oKF-Xn-vci" secondAttribute="bottom" constant="8" id="0UG-Tg-Ysi"/>
+                        <constraint firstAttribute="trailing" secondItem="oKF-Xn-vci" secondAttribute="trailing" constant="8" id="RHI-Kq-HYX"/>
+                        <constraint firstItem="oKF-Xn-vci" firstAttribute="leading" secondItem="zhZ-aV-eOs" secondAttribute="leading" constant="8" id="nhg-fI-V8z"/>
+                        <constraint firstItem="oKF-Xn-vci" firstAttribute="top" secondItem="zhZ-aV-eOs" secondAttribute="top" constant="8" id="ns8-WW-aDg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zhZ-aV-eOs" secondAttribute="bottom" id="4Hi-VK-lGy"/>
+                <constraint firstItem="zhZ-aV-eOs" firstAttribute="leading" secondItem="ijK-lm-leS" secondAttribute="leading" id="Tmj-ka-ufN"/>
+                <constraint firstItem="ijK-lm-leS" firstAttribute="trailing" secondItem="zhZ-aV-eOs" secondAttribute="trailing" id="USi-rU-fBT"/>
+                <constraint firstItem="zhZ-aV-eOs" firstAttribute="top" secondItem="ijK-lm-leS" secondAttribute="top" id="hSd-Iq-6xS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="ijK-lm-leS"/>
+            <connections>
+                <outlet property="searchTextField" destination="oKF-Xn-vci" id="aAB-KN-yzE"/>
+            </connections>
+            <point key="canvasLocation" x="58.5" y="248"/>
+        </view>
+    </objects>
+</document>
