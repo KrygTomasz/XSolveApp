@@ -10,10 +10,14 @@ import UIKit
 
 class SearchListHeader: UITableViewHeaderFooterView {
     
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            containerView.backgroundColor = .lightGray
+        }
+    }
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
             searchTextField.placeholder = "Search..."
-            searchTextField.backgroundColor = .lightGray
         }
     }
     

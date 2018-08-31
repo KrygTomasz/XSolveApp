@@ -10,10 +10,38 @@ import UIKit
 
 class PodcastDetailsViewController: UIViewController {
     
-    var podcastViewModel: PodcastViewModel? = nil
+    var podcastViewModel: PodcastViewModel?
+    
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            containerView.layer.cornerRadius = 12.0
+        }
+    }
+    @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var collectionTitleLabel: UILabel! {
+        didSet {
+            collectionTitleLabel.text = "from"
+        }
+    }
+    @IBOutlet weak var collectionNameLabel: UILabel!
+    @IBOutlet weak var artistTitleLabel: UILabel! {
+        didSet {
+            artistTitleLabel.text = "by"
+        }
+    }
+    @IBOutlet weak var artistNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Podcast details"
+        self.view.backgroundColor = .lightGray
+        updateUI()
+    }
+    
+    func updateUI() {
+        trackNameLabel.text = podcastViewModel?.trackName
+        collectionNameLabel.text = podcastViewModel?.collectionName
+        artistNameLabel.text = podcastViewModel?.artistName
     }
 
 }

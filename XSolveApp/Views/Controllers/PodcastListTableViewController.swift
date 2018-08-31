@@ -14,6 +14,7 @@ class PodcastListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Podcasts"
         prepareTableView()
         self.podcastListViewModel = PodcastListViewModel() {
             self.tableView.reloadData()
@@ -22,6 +23,8 @@ class PodcastListTableViewController: UITableViewController {
     
     func prepareTableView() {
         tableView.keyboardDismissMode = .interactive
+        tableView.backgroundColor = .lightGray
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 4, 0)
         registerCells()
     }
     
@@ -44,7 +47,9 @@ class PodcastListTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "PodcastTableViewCell", for: indexPath) as? PodcastTableViewCell else {
             return UITableViewCell()
         }
-        cell.trackNameLabel.text = podcastListViewModel.podcastViewModels[indexPath.row].trackName
+        let podcastViewModel = podcastListViewModel.podcastViewModel(at: indexPath.row)
+        cell.trackNameLabel.text = podcastViewModel.trackName
+        cell.artistNameLabel.text = podcastViewModel.artistName
         return cell
     }
     

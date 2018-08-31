@@ -10,16 +10,29 @@ import UIKit
 
 class PodcastTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var containerView: UIView! {
+        didSet {
+            containerView.layer.cornerRadius = 5.0
+        }
+    }
     @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var artistNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        super.setSelected(false, animated: animated)
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if highlighted {
+            containerView.layer.borderWidth = 2.0
+            containerView.layer.borderColor = UIColor.red.cgColor
+        } else {
+            containerView.layer.borderWidth = 0.0
+            containerView.layer.borderColor = UIColor.white.cgColor
+        }
     }
     
 }
