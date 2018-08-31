@@ -20,6 +20,7 @@
 		2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5142139DD1B003069C5 /* SearchListHeader.swift */; };
 		2224A5172139DD59003069C5 /* SearchListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2224A5162139DD59003069C5 /* SearchListHeader.xib */; };
 		2224A5192139E38C003069C5 /* PodcastDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */; };
+		2224A51B2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A51A2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		2224A5142139DD1B003069C5 /* SearchListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListHeader.swift; sourceTree = "<group>"; };
 		2224A5162139DD59003069C5 /* SearchListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchListHeader.xib; sourceTree = "<group>"; };
 		2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewController.swift; sourceTree = "<group>"; };
+		2224A51A2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebServiceManager+ImageDownload.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				2224A5062139CE3E003069C5 /* WebServiceManager.swift */,
+				2224A51A2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				2224A4F22139C8AA003069C5 /* PodcastListTableViewController.swift in Sources */,
 				2224A5052139CCE6003069C5 /* PodcastListViewModel.swift in Sources */,
 				2224A4F02139C8AA003069C5 /* AppDelegate.swift in Sources */,
+				2224A51B2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift in Sources */,
 				2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */,
 				2224A5112139D8B9003069C5 /* PodcastTableViewCell.swift in Sources */,
 				2224A50A2139CE9D003069C5 /* Podcast.swift in Sources */,

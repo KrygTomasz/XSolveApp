@@ -17,6 +17,19 @@ class PodcastDetailsViewController: UIViewController {
             containerView.layer.cornerRadius = 12.0
         }
     }
+    
+    @IBOutlet weak var priceLabel: UILabel! {
+        didSet {
+            priceLabel.textColor = .lightGray
+        }
+    }
+    @IBOutlet weak var coverContentView: UIView! {
+        didSet {
+            coverContentView.isHidden = true
+        }
+    }
+    @IBOutlet weak var coverImageView: UIImageView!
+    
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var collectionTitleLabel: UILabel! {
         didSet {
@@ -39,9 +52,25 @@ class PodcastDetailsViewController: UIViewController {
     }
     
     func updateUI() {
-        trackNameLabel.text = podcastViewModel?.trackName
-        collectionNameLabel.text = podcastViewModel?.collectionName
-        artistNameLabel.text = podcastViewModel?.artistName
+        guard let vm = podcastViewModel else { return }
+        priceLabel.text = "\(vm.trackPrice) \(vm.currency)"
+        trackNameLabel.text = vm.trackName
+        collectionNameLabel.text = vm.collectionName
+        artistNameLabel.text = vm.artistName
+        vm.loadImage { image in
+            DispatchQueue.main.async {
+                self.prepareCover(image)
+            }
+        }
+    }
+    
+    private func prepareCover(_ image: UIImage?) {
+        if let imageObj = image {
+            self.coverImageView.image = imageObj
+            self.coverContentView.isHidden = false
+        } else {
+            self.coverContentView.isHidden = true
+        }
     }
 
 }
