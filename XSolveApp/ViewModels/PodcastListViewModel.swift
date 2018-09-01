@@ -12,15 +12,18 @@ import UIKit
 class PodcastListViewModel {
     
     var podcastViewModels: [PodcastViewModel] = [PodcastViewModel]()
+    var webService: WebService<PodcastList>
     var completion: () -> Void
     
-    init(completion: @escaping () -> Void) {
+    init(webService: WebService<PodcastList>, completion: @escaping () -> Void) {
+        self.webService = webService
         self.completion = completion
-        populatePodcasts()
+        self.populatePodcasts()
     }
     
     private func populatePodcasts() {
-        WebServiceManager.shared.downloadPodcasts { success, podcasts in
+        webService.downloadData { success, podcastList in
+            let podcasts = podcastList?.results ?? []
             self.podcastViewModels = podcasts.map(PodcastViewModel.init)
             DispatchQueue.main.async {
                 self.completion()
@@ -30,30 +33,6 @@ class PodcastListViewModel {
     
     func podcastViewModel(at index: Int) -> PodcastViewModel {
         return podcastViewModels[index]
-    }
-    
-}
-
-class PodcastViewModel {
-    
-    var artistName: String
-    var collectionName: String
-    var trackName: String
-    var artworkUrl100: String
-    var trackPrice: Double
-    var currency: String
-    
-    init(podcast: Podcast) {
-        self.artistName = podcast.artistName
-        self.collectionName = podcast.collectionName
-        self.trackName = podcast.trackName
-        self.artworkUrl100 = podcast.artworkUrl100
-        self.trackPrice = podcast.trackPrice
-        self.currency = podcast.currency
-    }
-    
-    func loadImage(completion: @escaping (UIImage?) -> Void) {
-        WebServiceManager.shared.downloadImage(from: artworkUrl100, completion: completion)
     }
     
 }

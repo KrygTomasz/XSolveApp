@@ -13,15 +13,18 @@
 		2224A4F72139C8AC003069C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2224A4F62139C8AC003069C5 /* Assets.xcassets */; };
 		2224A4FA2139C8AC003069C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2224A4F82139C8AC003069C5 /* LaunchScreen.storyboard */; };
 		2224A5052139CCE6003069C5 /* PodcastListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5042139CCE6003069C5 /* PodcastListViewModel.swift */; };
-		2224A5072139CE3E003069C5 /* WebServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5062139CE3E003069C5 /* WebServiceManager.swift */; };
+		2224A5072139CE3E003069C5 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5062139CE3E003069C5 /* WebService.swift */; };
 		2224A50A2139CE9D003069C5 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5092139CE9D003069C5 /* Podcast.swift */; };
 		2224A5112139D8B9003069C5 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A50F2139D8B9003069C5 /* PodcastTableViewCell.swift */; };
 		2224A5122139D8B9003069C5 /* PodcastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2224A5102139D8B9003069C5 /* PodcastTableViewCell.xib */; };
 		2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5142139DD1B003069C5 /* SearchListHeader.swift */; };
 		2224A5172139DD59003069C5 /* SearchListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2224A5162139DD59003069C5 /* SearchListHeader.xib */; };
 		2224A5192139E38C003069C5 /* PodcastDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */; };
-		2224A51B2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A51A2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift */; };
+		2224A51B2139F4AD003069C5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A51A2139F4AD003069C5 /* ImageDownloader.swift */; };
 		2281538A213A91F50055C3FE /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22815389213A91F50055C3FE /* TableViewDataSource.swift */; };
+		2281538C213AA5FB0055C3FE /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281538B213AA5FB0055C3FE /* Feed.swift */; };
+		2281538F213AA6180055C3FE /* PodcastFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281538E213AA6180055C3FE /* PodcastFeed.swift */; };
+		22815391213AB8D20055C3FE /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22815390213AB8D20055C3FE /* PodcastViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,15 +36,18 @@
 		2224A4F92139C8AC003069C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2224A4FB2139C8AC003069C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2224A5042139CCE6003069C5 /* PodcastListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListViewModel.swift; sourceTree = "<group>"; };
-		2224A5062139CE3E003069C5 /* WebServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceManager.swift; sourceTree = "<group>"; };
+		2224A5062139CE3E003069C5 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		2224A5092139CE9D003069C5 /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		2224A50F2139D8B9003069C5 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		2224A5102139D8B9003069C5 /* PodcastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PodcastTableViewCell.xib; sourceTree = "<group>"; };
 		2224A5142139DD1B003069C5 /* SearchListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListHeader.swift; sourceTree = "<group>"; };
 		2224A5162139DD59003069C5 /* SearchListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchListHeader.xib; sourceTree = "<group>"; };
 		2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewController.swift; sourceTree = "<group>"; };
-		2224A51A2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebServiceManager+ImageDownload.swift"; sourceTree = "<group>"; };
+		2224A51A2139F4AD003069C5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		22815389213A91F50055C3FE /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		2281538B213AA5FB0055C3FE /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		2281538E213AA6180055C3FE /* PodcastFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastFeed.swift; sourceTree = "<group>"; };
+		22815390213AB8D20055C3FE /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				2224A5042139CCE6003069C5 /* PodcastListViewModel.swift */,
+				22815390213AB8D20055C3FE /* PodcastViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -117,8 +124,9 @@
 		2224A50C2139D84B003069C5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2224A5062139CE3E003069C5 /* WebServiceManager.swift */,
-				2224A51A2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift */,
+				2281538D213AA60A0055C3FE /* Feeds */,
+				2224A5062139CE3E003069C5 /* WebService.swift */,
+				2224A51A2139F4AD003069C5 /* ImageDownloader.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -156,6 +164,15 @@
 				22815389213A91F50055C3FE /* TableViewDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		2281538D213AA60A0055C3FE /* Feeds */ = {
+			isa = PBXGroup;
+			children = (
+				2281538B213AA5FB0055C3FE /* Feed.swift */,
+				2281538E213AA6180055C3FE /* PodcastFeed.swift */,
+			);
+			path = Feeds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,14 +249,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				2224A5192139E38C003069C5 /* PodcastDetailsViewController.swift in Sources */,
-				2224A5072139CE3E003069C5 /* WebServiceManager.swift in Sources */,
+				2224A5072139CE3E003069C5 /* WebService.swift in Sources */,
 				2224A4F22139C8AA003069C5 /* PodcastListTableViewController.swift in Sources */,
 				2224A5052139CCE6003069C5 /* PodcastListViewModel.swift in Sources */,
+				22815391213AB8D20055C3FE /* PodcastViewModel.swift in Sources */,
+				2281538C213AA5FB0055C3FE /* Feed.swift in Sources */,
 				2224A4F02139C8AA003069C5 /* AppDelegate.swift in Sources */,
-				2224A51B2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift in Sources */,
+				2224A51B2139F4AD003069C5 /* ImageDownloader.swift in Sources */,
 				2281538A213A91F50055C3FE /* TableViewDataSource.swift in Sources */,
 				2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */,
 				2224A5112139D8B9003069C5 /* PodcastTableViewCell.swift in Sources */,
+				2281538F213AA6180055C3FE /* PodcastFeed.swift in Sources */,
 				2224A50A2139CE9D003069C5 /* Podcast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

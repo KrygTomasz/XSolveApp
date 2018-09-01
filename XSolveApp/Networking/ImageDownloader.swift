@@ -1,5 +1,5 @@
 //
-//  WebServiceManager+ImageDownload.swift
+//  ImageDownloader.swift
 //  XSolveApp
 //
 //  Created by Kryg Tomasz on 01.09.2018.
@@ -9,9 +9,9 @@
 import UIKit
 
 //MARK: Downloading image from url
-extension WebServiceManager {
+class ImageDownloader {
     
-    private func getDataFromUrl(url: URL?, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    private static func getDataFromUrl(url: URL?, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         guard let url = url else {
             print("Getting data from url failed. Wrong format for URL address.")
             return
@@ -21,8 +21,11 @@ extension WebServiceManager {
         }.resume()
     }
     
-    func downloadImage(from urlAddress: String, completion: @escaping (UIImage?) -> Void) {
-        guard let url = URL(string: urlAddress) else { return }
+    static func downloadImage(from urlAddress: String?, completion: @escaping (UIImage?) -> Void) {
+        guard
+            let address = urlAddress,
+            let url = URL(string: address)
+        else { return }
         getDataFromUrl(url: url) { data, response, error in
             guard
                 let data = data,

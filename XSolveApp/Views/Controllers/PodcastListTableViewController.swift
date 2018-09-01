@@ -10,6 +10,8 @@ import UIKit
 
 class PodcastListTableViewController: UITableViewController {
     
+    private var webService: WebService<PodcastList>!
+    private var podcastFeed: PodcastFeed!
     private var podcastListViewModel: PodcastListViewModel!
     private var dataSource: TableViewDataSource<PodcastTableViewCell, PodcastViewModel>!
     private var podcastCellIdentifier: String = "PodcastTableViewCell"
@@ -18,7 +20,9 @@ class PodcastListTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.title = "Podcasts"
         prepareTableView()
-        self.podcastListViewModel = PodcastListViewModel() {
+        self.podcastFeed = PodcastFeed(termToSearch: "Jack johnson")
+        self.webService = WebService<PodcastList>(feed: podcastFeed)
+        self.podcastListViewModel = PodcastListViewModel(webService: self.webService) {
             self.prepareDataSource()
         }
     }

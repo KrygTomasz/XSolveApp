@@ -53,7 +53,9 @@ class PodcastDetailsViewController: UIViewController {
     
     func updateUI() {
         guard let vm = podcastViewModel else { return }
-        priceLabel.text = "\(vm.trackPrice) \(vm.currency)"
+        let price = vm.trackPrice ?? 0
+        let currency = vm.currency ?? ""
+        priceLabel.text = "\(price) \(currency)"
         trackNameLabel.text = vm.trackName
         collectionNameLabel.text = vm.collectionName
         artistNameLabel.text = vm.artistName
