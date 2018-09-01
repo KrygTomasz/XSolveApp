@@ -11,47 +11,52 @@ import UIKit
 class PodcastListTableViewController: UITableViewController {
     
     private var podcastListViewModel: PodcastListViewModel!
+    private var dataSource: TableViewDataSource<PodcastTableViewCell, PodcastViewModel>!
+    private var podcastCellIdentifier: String = "PodcastTableViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Podcasts"
         prepareTableView()
         self.podcastListViewModel = PodcastListViewModel() {
-            self.tableView.reloadData()
+            self.prepareDataSource()
         }
     }
     
-    func prepareTableView() {
+    private func prepareTableView() {
+        registerCells()
         tableView.keyboardDismissMode = .interactive
         tableView.backgroundColor = .lightGray
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 4, 0)
-        registerCells()
     }
     
-    func registerCells() {
-        let podcastCellNib = UINib(nibName: "PodcastTableViewCell", bundle: nil)
-        tableView.register(podcastCellNib, forCellReuseIdentifier: "PodcastTableViewCell")
+    private func registerCells() {
+        let podcastCellNib = UINib(nibName: podcastCellIdentifier, bundle: nil)
+        tableView.register(podcastCellNib, forCellReuseIdentifier: podcastCellIdentifier)
         let headerNib = UINib(nibName: "SearchListHeader", bundle: nil)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "SearchListHeader")
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    private func prepareDataSource() {
+        self.dataSource = TableViewDataSource(cellIdentifier: self.podcastCellIdentifier, viewModels: self.podcastListViewModel.podcastViewModels, configureCell: self.configureCell)
+        self.tableView.dataSource = self.dataSource
+        self.tableView.reloadData()
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return podcastListViewModel.podcastViewModels.count
+    private func configureCell(_ cell: PodcastTableViewCell, using viewModel: PodcastViewModel) {
+        cell.trackNameLabel.text = viewModel.trackName
+        cell.artistNameLabel.text = viewModel.artistName
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PodcastTableViewCell", for: indexPath) as? PodcastTableViewCell else {
-            return UITableViewCell()
-        }
-        let podcastViewModel = podcastListViewModel.podcastViewModel(at: indexPath.row)
-        cell.trackNameLabel.text = podcastViewModel.trackName
-        cell.artistNameLabel.text = podcastViewModel.artistName
-        return cell
+    private func goToPodcastDetails(using podcastViewModel: PodcastViewModel) {
+        let vc = PodcastDetailsViewController.getInstance(using: podcastViewModel)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+
+}
+
+//MARK: UITableViewDelegate
+extension PodcastListTableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SearchListHeader") as? SearchListHeader else { return UIView() }
@@ -67,9 +72,4 @@ class PodcastListTableViewController: UITableViewController {
         goToPodcastDetails(using: model)
     }
     
-    private func goToPodcastDetails(using podcastViewModel: PodcastViewModel) {
-        let vc = PodcastDetailsViewController.getInstance(using: podcastViewModel)
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-
 }

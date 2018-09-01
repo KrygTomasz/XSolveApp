@@ -21,6 +21,7 @@
 		2224A5172139DD59003069C5 /* SearchListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2224A5162139DD59003069C5 /* SearchListHeader.xib */; };
 		2224A5192139E38C003069C5 /* PodcastDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */; };
 		2224A51B2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A51A2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift */; };
+		2281538A213A91F50055C3FE /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22815389213A91F50055C3FE /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2224A5162139DD59003069C5 /* SearchListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchListHeader.xib; sourceTree = "<group>"; };
 		2224A5182139E38C003069C5 /* PodcastDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewController.swift; sourceTree = "<group>"; };
 		2224A51A2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebServiceManager+ImageDownload.swift"; sourceTree = "<group>"; };
+		22815389213A91F50055C3FE /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		2224A4EE2139C8AA003069C5 /* XSolveApp */ = {
 			isa = PBXGroup;
 			children = (
+				22815388213A91B30055C3FE /* DataSource */,
 				2224A50C2139D84B003069C5 /* Networking */,
 				2224A50B2139D841003069C5 /* Views */,
 				2224A5082139CE94003069C5 /* Models */,
@@ -145,6 +148,14 @@
 				2224A5162139DD59003069C5 /* SearchListHeader.xib */,
 			);
 			path = Headers;
+			sourceTree = "<group>";
+		};
+		22815388213A91B30055C3FE /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				22815389213A91F50055C3FE /* TableViewDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +237,7 @@
 				2224A5052139CCE6003069C5 /* PodcastListViewModel.swift in Sources */,
 				2224A4F02139C8AA003069C5 /* AppDelegate.swift in Sources */,
 				2224A51B2139F4AD003069C5 /* WebServiceManager+ImageDownload.swift in Sources */,
+				2281538A213A91F50055C3FE /* TableViewDataSource.swift in Sources */,
 				2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */,
 				2224A5112139D8B9003069C5 /* PodcastTableViewCell.swift in Sources */,
 				2224A50A2139CE9D003069C5 /* Podcast.swift in Sources */,
