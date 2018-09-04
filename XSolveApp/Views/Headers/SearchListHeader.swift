@@ -16,7 +16,7 @@ class SearchListHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var containerView: UIView! {
         didSet {
-            containerView.backgroundColor = .lightGray
+            containerView.backgroundColor = .backgroundColor
         }
     }
     @IBOutlet weak var searchTextField: UITextField! {

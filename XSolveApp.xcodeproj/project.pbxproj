@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		221EC795213EB29100BBDA96 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EC794213EB29100BBDA96 /* UIColor+Extensions.swift */; };
 		2224A4F02139C8AA003069C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A4EF2139C8AA003069C5 /* AppDelegate.swift */; };
 		2224A4F22139C8AA003069C5 /* PodcastListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A4F12139C8AA003069C5 /* PodcastListTableViewController.swift */; };
 		2224A4F52139C8AA003069C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2224A4F32139C8AA003069C5 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		221EC794213EB29100BBDA96 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		2224A4EC2139C8AA003069C5 /* XSolveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XSolveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2224A4EF2139C8AA003069C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2224A4F12139C8AA003069C5 /* PodcastListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListTableViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		221EC793213EB27F00BBDA96 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				221EC794213EB29100BBDA96 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		2224A4E32139C8A9003069C5 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 		2224A4EE2139C8AA003069C5 /* XSolveApp */ = {
 			isa = PBXGroup;
 			children = (
+				221EC793213EB27F00BBDA96 /* Extensions */,
 				22815388213A91B30055C3FE /* DataSource */,
 				2224A50C2139D84B003069C5 /* Networking */,
 				2224A50B2139D841003069C5 /* Views */,
@@ -252,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2224A5192139E38C003069C5 /* PodcastDetailsViewController.swift in Sources */,
+				221EC795213EB29100BBDA96 /* UIColor+Extensions.swift in Sources */,
 				2224A5072139CE3E003069C5 /* WebService.swift in Sources */,
 				2224A4F22139C8AA003069C5 /* PodcastListTableViewController.swift in Sources */,
 				2224A5052139CCE6003069C5 /* PodcastListViewModel.swift in Sources */,

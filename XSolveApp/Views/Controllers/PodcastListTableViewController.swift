@@ -30,7 +30,7 @@ class PodcastListTableViewController: UITableViewController {
     private func prepareTableView() {
         registerCells()
         tableView.keyboardDismissMode = .interactive
-        tableView.backgroundColor = .lightGray
+        tableView.backgroundColor = .backgroundColor
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 4, 0)
     }
     

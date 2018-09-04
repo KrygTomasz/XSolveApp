@@ -28,7 +28,7 @@ class PodcastTableViewCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         if highlighted {
             containerView.layer.borderWidth = 2.0
-            containerView.layer.borderColor = UIColor.red.cgColor
+            containerView.layer.borderColor = UIColor.tintColor.cgColor
         } else {
             containerView.layer.borderWidth = 0.0
             containerView.layer.borderColor = UIColor.white.cgColor

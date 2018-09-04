@@ -47,7 +47,7 @@ class PodcastDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Podcast details"
-        self.view.backgroundColor = .lightGray
+        self.view.backgroundColor = .backgroundColor
         updateUI()
     }
     
