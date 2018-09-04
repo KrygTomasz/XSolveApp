@@ -25,6 +25,7 @@
 		2281538C213AA5FB0055C3FE /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281538B213AA5FB0055C3FE /* Feed.swift */; };
 		2281538F213AA6180055C3FE /* PodcastFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281538E213AA6180055C3FE /* PodcastFeed.swift */; };
 		22815391213AB8D20055C3FE /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22815390213AB8D20055C3FE /* PodcastViewModel.swift */; };
+		22BE72BB213E711F0033B71A /* PodcastDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE72BA213E711F0033B71A /* PodcastDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		2281538B213AA5FB0055C3FE /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		2281538E213AA6180055C3FE /* PodcastFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastFeed.swift; sourceTree = "<group>"; };
 		22815390213AB8D20055C3FE /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
+		22BE72BA213E711F0033B71A /* PodcastDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				2224A5042139CCE6003069C5 /* PodcastListViewModel.swift */,
 				22815390213AB8D20055C3FE /* PodcastViewModel.swift */,
+				22BE72BA213E711F0033B71A /* PodcastDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */,
 				2224A5112139D8B9003069C5 /* PodcastTableViewCell.swift in Sources */,
 				2281538F213AA6180055C3FE /* PodcastFeed.swift in Sources */,
+				22BE72BB213E711F0033B71A /* PodcastDetailsViewModel.swift in Sources */,
 				2224A50A2139CE9D003069C5 /* Podcast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

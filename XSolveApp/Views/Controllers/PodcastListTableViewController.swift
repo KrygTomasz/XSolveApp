@@ -53,7 +53,8 @@ class PodcastListTableViewController: UITableViewController {
     }
     
     private func goToPodcastDetails(using podcastViewModel: PodcastViewModel) {
-        let vc = PodcastDetailsViewController.getInstance(using: podcastViewModel)
+        let podcastDetailsViewModel = PodcastDetailsViewModel(using: podcastViewModel)
+        let vc = PodcastDetailsViewController.getInstance(using: podcastDetailsViewModel)
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

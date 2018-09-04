@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 class PodcastViewModel {
     
@@ -25,10 +24,6 @@ class PodcastViewModel {
         self.artworkUrl100 = podcast.artworkUrl100
         self.trackPrice = podcast.trackPrice
         self.currency = podcast.currency
-    }
-    
-    func loadImage(completion: @escaping (UIImage?) -> Void) {
-        ImageDownloader.downloadImage(from: artworkUrl100, completion: completion)
     }
     
 }

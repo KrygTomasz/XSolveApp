@@ -188,8 +188,10 @@
                         <viewLayoutGuide key="safeArea" id="gNR-ef-EXX"/>
                     </view>
                     <connections>
+                        <outlet property="artistContentView" destination="J5T-zK-pcw" id="HeE-hl-a1Q"/>
                         <outlet property="artistNameLabel" destination="5Bj-va-Uqj" id="NSA-FA-q3O"/>
                         <outlet property="artistTitleLabel" destination="lcW-dK-tZm" id="kvn-f0-DPZ"/>
+                        <outlet property="collectionContentView" destination="sdx-Ck-H3F" id="4we-MS-rQ1"/>
                         <outlet property="collectionNameLabel" destination="QY6-FJ-zsM" id="5zz-3Y-pJ2"/>
                         <outlet property="collectionTitleLabel" destination="O9i-1S-ZLJ" id="Bne-Gv-hyy"/>
                         <outlet property="containerView" destination="sA7-HC-qyM" id="IvV-AN-0Pd"/>

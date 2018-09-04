@@ -10,14 +10,13 @@ import UIKit
 
 class PodcastDetailsViewController: UIViewController {
     
-    var podcastViewModel: PodcastViewModel?
+    var podcastDetailsViewModel: PodcastDetailsViewModel?
     
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 12.0
         }
     }
-    
     @IBOutlet weak var priceLabel: UILabel! {
         didSet {
             priceLabel.textColor = .lightGray
@@ -29,14 +28,15 @@ class PodcastDetailsViewController: UIViewController {
         }
     }
     @IBOutlet weak var coverImageView: UIImageView!
-    
     @IBOutlet weak var trackNameLabel: UILabel!
+    @IBOutlet weak var collectionContentView: UIView!
     @IBOutlet weak var collectionTitleLabel: UILabel! {
         didSet {
             collectionTitleLabel.text = "from"
         }
     }
     @IBOutlet weak var collectionNameLabel: UILabel!
+    @IBOutlet weak var artistContentView: UIView!
     @IBOutlet weak var artistTitleLabel: UILabel! {
         didSet {
             artistTitleLabel.text = "by"
@@ -52,10 +52,13 @@ class PodcastDetailsViewController: UIViewController {
     }
     
     private func updateUI() {
-        guard let vm = podcastViewModel else { return }
-        let price = vm.trackPrice ?? 0
-        let currency = vm.currency ?? ""
-        priceLabel.text = "\(price) \(currency)"
+        prepareData()
+        prepareViews()
+    }
+    
+    private func prepareData() {
+        guard let vm = podcastDetailsViewModel else { return }
+        priceLabel.text = vm.priceText
         trackNameLabel.text = vm.trackName
         collectionNameLabel.text = vm.collectionName
         artistNameLabel.text = vm.artistName
@@ -64,6 +67,12 @@ class PodcastDetailsViewController: UIViewController {
                 self?.prepareCover(image)
             }
         }
+    }
+    
+    private func prepareViews() {
+        guard let vm = podcastDetailsViewModel else { return }
+        collectionContentView.isHidden = vm.collectionIsHidden
+        artistContentView.isHidden = vm.artistIsHidden
     }
     
     private func prepareCover(_ image: UIImage?) {
@@ -79,12 +88,12 @@ class PodcastDetailsViewController: UIViewController {
 
 //MARK: Constructor
 extension PodcastDetailsViewController {
-    static func getInstance(using podcastViewModel: PodcastViewModel) -> PodcastDetailsViewController {
+    static func getInstance(using podcastDetailsViewModel: PodcastDetailsViewModel) -> PodcastDetailsViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let podcastDetailsVC = storyboard.instantiateViewController(withIdentifier: "PodcastDetailsViewController") as? PodcastDetailsViewController else {
             fatalError("Cannot instantiate PodcastDetailsViewController")
         }
-        podcastDetailsVC.podcastViewModel = podcastViewModel
+        podcastDetailsVC.podcastDetailsViewModel = podcastDetailsViewModel
         return podcastDetailsVC
     }
 }
