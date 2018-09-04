@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SearchListHeaderDelegate: class {
+    func search(text: String)
+}
+
 class SearchListHeader: UITableViewHeaderFooterView {
     
     @IBOutlet weak var containerView: UIView! {
@@ -18,7 +22,20 @@ class SearchListHeader: UITableViewHeaderFooterView {
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
             searchTextField.placeholder = "Search..."
+            searchTextField.delegate = self
         }
+    }
+    
+    weak var delegate: SearchListHeaderDelegate?
+    
+}
+
+extension SearchListHeader: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let searchTerm = searchTextField.text ?? ""
+        delegate?.search(text: searchTerm)
+        return textField.resignFirstResponder()
     }
     
 }

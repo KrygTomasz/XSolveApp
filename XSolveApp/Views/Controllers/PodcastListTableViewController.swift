@@ -64,6 +64,7 @@ extension PodcastListTableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "SearchListHeader") as? SearchListHeader else { return UIView() }
+        header.delegate = self
         return header
     }
     
@@ -74,6 +75,19 @@ extension PodcastListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = podcastListViewModel.podcastViewModel(at: indexPath.row)
         goToPodcastDetails(using: model)
+    }
+    
+}
+
+//MARK: SearchListHeaderDelegate
+extension PodcastListTableViewController: SearchListHeaderDelegate {
+    
+    func search(text: String) {
+        self.podcastFeed = PodcastFeed(termToSearch: text)
+        self.webService = WebService<PodcastList>(feed: podcastFeed)
+        self.podcastListViewModel = PodcastListViewModel(webService: self.webService) {
+            self.prepareDataSource()
+        }
     }
     
 }

@@ -51,7 +51,7 @@ class PodcastDetailsViewController: UIViewController {
         updateUI()
     }
     
-    func updateUI() {
+    private func updateUI() {
         guard let vm = podcastViewModel else { return }
         let price = vm.trackPrice ?? 0
         let currency = vm.currency ?? ""
@@ -59,9 +59,9 @@ class PodcastDetailsViewController: UIViewController {
         trackNameLabel.text = vm.trackName
         collectionNameLabel.text = vm.collectionName
         artistNameLabel.text = vm.artistName
-        vm.loadImage { image in
+        vm.loadImage { [weak self] image in
             DispatchQueue.main.async {
-                self.prepareCover(image)
+                self?.prepareCover(image)
             }
         }
     }
