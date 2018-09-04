@@ -46,7 +46,7 @@ class PodcastDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Podcast details"
+        self.prepareNavigationBar(withTitle: "podcastDetails".localized())
         self.view.backgroundColor = .backgroundColor
         updateUI()
     }

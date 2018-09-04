@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		221EC795213EB29100BBDA96 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EC794213EB29100BBDA96 /* UIColor+Extensions.swift */; };
+		221EC797213EB5BA00BBDA96 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EC796213EB5BA00BBDA96 /* UIViewController+Extensions.swift */; };
+		221EC79A213EB7F400BBDA96 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 221EC79C213EB7F400BBDA96 /* Localizable.strings */; };
+		221EC7A3213EB8BE00BBDA96 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221EC7A2213EB8BE00BBDA96 /* String+Extensions.swift */; };
 		2224A4F02139C8AA003069C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A4EF2139C8AA003069C5 /* AppDelegate.swift */; };
 		2224A4F22139C8AA003069C5 /* PodcastListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2224A4F12139C8AA003069C5 /* PodcastListTableViewController.swift */; };
 		2224A4F52139C8AA003069C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2224A4F32139C8AA003069C5 /* Main.storyboard */; };
@@ -31,6 +34,12 @@
 
 /* Begin PBXFileReference section */
 		221EC794213EB29100BBDA96 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		221EC796213EB5BA00BBDA96 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		221EC79B213EB7F400BBDA96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		221EC79D213EB82500BBDA96 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
+		221EC79E213EB82600BBDA96 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		221EC79F213EB82600BBDA96 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		221EC7A2213EB8BE00BBDA96 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		2224A4EC2139C8AA003069C5 /* XSolveApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XSolveApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2224A4EF2139C8AA003069C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2224A4F12139C8AA003069C5 /* PodcastListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastListTableViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				221EC794213EB29100BBDA96 /* UIColor+Extensions.swift */,
+				221EC796213EB5BA00BBDA96 /* UIViewController+Extensions.swift */,
+				221EC7A2213EB8BE00BBDA96 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -103,6 +114,7 @@
 				2224A4F62139C8AC003069C5 /* Assets.xcassets */,
 				2224A4F82139C8AC003069C5 /* LaunchScreen.storyboard */,
 				2224A4FB2139C8AC003069C5 /* Info.plist */,
+				221EC79C213EB7F400BBDA96 /* Localizable.strings */,
 			);
 			path = XSolveApp;
 			sourceTree = "<group>";
@@ -231,6 +243,7 @@
 			knownRegions = (
 				en,
 				Base,
+				pl,
 			);
 			mainGroup = 2224A4E32139C8A9003069C5;
 			productRefGroup = 2224A4ED2139C8AA003069C5 /* Products */;
@@ -248,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2224A4FA2139C8AC003069C5 /* LaunchScreen.storyboard in Resources */,
+				221EC79A213EB7F400BBDA96 /* Localizable.strings in Resources */,
 				2224A5172139DD59003069C5 /* SearchListHeader.xib in Resources */,
 				2224A4F72139C8AC003069C5 /* Assets.xcassets in Resources */,
 				2224A5122139D8B9003069C5 /* PodcastTableViewCell.xib in Resources */,
@@ -274,6 +288,8 @@
 				2281538A213A91F50055C3FE /* TableViewDataSource.swift in Sources */,
 				2224A5152139DD1B003069C5 /* SearchListHeader.swift in Sources */,
 				2224A5112139D8B9003069C5 /* PodcastTableViewCell.swift in Sources */,
+				221EC7A3213EB8BE00BBDA96 /* String+Extensions.swift in Sources */,
+				221EC797213EB5BA00BBDA96 /* UIViewController+Extensions.swift in Sources */,
 				2281538F213AA6180055C3FE /* PodcastFeed.swift in Sources */,
 				22BE72BB213E711F0033B71A /* PodcastDetailsViewModel.swift in Sources */,
 				2224A50A2139CE9D003069C5 /* Podcast.swift in Sources */,
@@ -283,10 +299,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		221EC79C213EB7F400BBDA96 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				221EC79B213EB7F400BBDA96 /* en */,
+				221EC79F213EB82600BBDA96 /* pl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		2224A4F32139C8AA003069C5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2224A4F42139C8AA003069C5 /* Base */,
+				221EC79D213EB82500BBDA96 /* pl */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -295,6 +321,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2224A4F92139C8AC003069C5 /* Base */,
+				221EC79E213EB82600BBDA96 /* pl */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -306,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -366,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  XSolveApp
+
+  Created by Kryg Tomasz on 04.09.2018.
+  Copyright © 2018 Kryg Tomasz. All rights reserved.
+*/
+
+"podcasts" = "Podcasty";
+"podcastDetails" = "Szczegóły podcastu";
+"search" = "Szukaj";

@@ -21,7 +21,7 @@ class SearchListHeader: UITableViewHeaderFooterView {
     }
     @IBOutlet weak var searchTextField: UITextField! {
         didSet {
-            searchTextField.placeholder = "Search..."
+            searchTextField.placeholder = "search".localized() + "..."
             searchTextField.delegate = self
         }
     }

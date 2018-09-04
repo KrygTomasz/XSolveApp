@@ -18,7 +18,7 @@ class PodcastListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Podcasts"
+        self.prepareNavigationBar(withTitle: "podcasts".localized())
         prepareTableView()
         self.podcastFeed = PodcastFeed(termToSearch: "Jack johnson")
         self.webService = WebService<PodcastList>(feed: podcastFeed)
