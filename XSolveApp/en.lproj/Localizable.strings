@@ -9,3 +9,7 @@
 "podcasts" = "Podcasts";
 "podcastDetails" = "Podcasts details";
 "search" = "Search";
+"wrongUrlAddress" = "Wrong url address";
+"errorFromWS" = "Error from web service";
+"invalidData" = "Invalid data";
+"jsonDecodingFailure" = "JSON decoding failure – check model properties";

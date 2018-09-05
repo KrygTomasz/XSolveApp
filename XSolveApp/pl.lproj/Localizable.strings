@@ -9,3 +9,7 @@
 "podcasts" = "Podcasty";
 "podcastDetails" = "Szczegóły podcastu";
 "search" = "Szukaj";
+"wrongUrlAddress" = "Błędny adres URL";
+"errorFromWS" = "Błąd z usługi";
+"invalidData" = "Niepoprawne dane";
+"jsonDecodingFailure" = "Błąd podczas dekodowania pliku JSON – sprawdź zmienne modelu";

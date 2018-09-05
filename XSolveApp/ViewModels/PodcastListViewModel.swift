@@ -22,11 +22,19 @@ class PodcastListViewModel {
     }
     
     private func populatePodcasts() {
-        webService.downloadData { success, podcastList in
-            let podcasts = podcastList?.results ?? []
-            self.podcastViewModels = podcasts.map(PodcastViewModel.init)
-            DispatchQueue.main.async {
-                self.completion()
+        webService.downloadData { result in
+            switch result {
+            case .failure(let error):
+                self.podcastViewModels = []
+                DispatchQueue.main.async {
+                    self.completion()
+                }
+            case .success(let podcastList):
+                let podcasts = podcastList.results 
+                self.podcastViewModels = podcasts.map(PodcastViewModel.init)
+                DispatchQueue.main.async {
+                    self.completion()
+                }
             }
         }
     }
