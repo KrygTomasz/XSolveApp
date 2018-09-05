@@ -54,6 +54,11 @@ class PodcastListTableViewController: UITableViewController {
     private func configureCell(_ cell: PodcastTableViewCell, using viewModel: PodcastViewModel) {
         cell.trackNameLabel.text = viewModel.trackName
         cell.artistNameLabel.text = viewModel.artistName
+        viewModel.loadImage() { image in
+            DispatchQueue.main.async {
+                cell.coverImageView.image = image
+            }
+        }
     }
     
     private func goToPodcastDetails(using podcastViewModel: PodcastViewModel) {

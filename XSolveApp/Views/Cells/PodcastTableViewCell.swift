@@ -17,6 +17,8 @@ class PodcastTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var trackNameLabel: UILabel!
     @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var coverImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
