@@ -13,3 +13,4 @@
 "errorFromWS" = "Error from web service";
 "invalidData" = "Invalid data";
 "jsonDecodingFailure" = "JSON decoding failure – check model properties";
+"noPodcasts" = "No podcasts found. Try to change query";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIEmptyState
 
 class PodcastListTableViewController: UITableViewController {
     
@@ -29,6 +30,8 @@ class PodcastListTableViewController: UITableViewController {
     
     private func prepareTableView() {
         registerCells()
+        self.emptyStateDelegate = self
+        self.emptyStateDataSource = self
         tableView.keyboardDismissMode = .interactive
         tableView.backgroundColor = .backgroundColor
         tableView.contentInset = UIEdgeInsetsMake(0, 0, 4, 0)
@@ -45,6 +48,7 @@ class PodcastListTableViewController: UITableViewController {
         self.dataSource = TableViewDataSource(cellIdentifier: self.podcastCellIdentifier, viewModels: self.podcastListViewModel.podcastViewModels, configureCell: self.configureCell)
         self.tableView.dataSource = self.dataSource
         self.tableView.reloadData()
+        self.reloadEmptyStateForTableView(self.tableView)
     }
     
     private func configureCell(_ cell: PodcastTableViewCell, using viewModel: PodcastViewModel) {
@@ -91,4 +95,18 @@ extension PodcastListTableViewController: SearchListHeaderDelegate {
         }
     }
     
+}
+
+//MARK: UIEmptyStateDelegates
+extension PodcastListTableViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
+    var emptyStateTitle: NSAttributedString {
+        return NSAttributedString(string: podcastListViewModel.emptyViewMessage, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
+    }
+    var emptyStateImage: UIImage? {
+        let image = #imageLiteral(resourceName: "notKnowIcon").withRenderingMode(.alwaysTemplate)
+        return image
+    }
+    var emptyStateImageViewTintColor: UIColor? {
+        return UIColor.white
+    }
 }

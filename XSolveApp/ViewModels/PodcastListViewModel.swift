@@ -9,11 +9,28 @@
 import Foundation
 import UIKit
 
+enum PodcastEmptyViewState {
+    case firstLaunch
+    case noData
+    case failure(Error)
+}
+
 class PodcastListViewModel {
     
     var podcastViewModels: [PodcastViewModel] = [PodcastViewModel]()
     var webService: WebService<PodcastList>
     var completion: () -> Void
+    var emptyViewMessage: String {
+        switch emptyViewState {
+        case .firstLaunch:
+            return ""
+        case .noData:
+            return "noPodcasts".localized()
+        case .failure(let error):
+            return error.localizedDescription
+        }
+    }
+    private var emptyViewState: PodcastEmptyViewState = .firstLaunch
     
     init(webService: WebService<PodcastList>, completion: @escaping () -> Void) {
         self.webService = webService
@@ -25,12 +42,14 @@ class PodcastListViewModel {
         webService.downloadData { result in
             switch result {
             case .failure(let error):
+                self.emptyViewState = .failure(error)
                 self.podcastViewModels = []
                 DispatchQueue.main.async {
                     self.completion()
                 }
             case .success(let podcastList):
-                let podcasts = podcastList.results 
+                self.emptyViewState = .noData
+                let podcasts = podcastList.results
                 self.podcastViewModels = podcasts.map(PodcastViewModel.init)
                 DispatchQueue.main.async {
                     self.completion()

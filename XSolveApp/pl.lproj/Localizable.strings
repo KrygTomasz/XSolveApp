@@ -13,3 +13,4 @@
 "errorFromWS" = "Błąd z usługi";
 "invalidData" = "Niepoprawne dane";
 "jsonDecodingFailure" = "Błąd podczas dekodowania pliku JSON – sprawdź zmienne modelu";
+"noPodcasts" = "Nie znaleziono żadnych podcastów. Spróbuj zmienić zapytanie"
