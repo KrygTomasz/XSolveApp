@@ -96,6 +96,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstItem="eOV-x3-xuS" firstAttribute="centerY" secondItem="Bgi-VJ-tel" secondAttribute="centerY" id="H3w-KT-1ca"/>
                                                             <constraint firstAttribute="bottom" secondItem="eOV-x3-xuS" secondAttribute="bottom" id="Hlm-OG-Y5l"/>
                                                             <constraint firstItem="eOV-x3-xuS" firstAttribute="top" secondItem="Bgi-VJ-tel" secondAttribute="top" id="M6B-po-jo8"/>
                                                             <constraint firstItem="eOV-x3-xuS" firstAttribute="centerX" secondItem="Bgi-VJ-tel" secondAttribute="centerX" id="Qc2-yV-GUM"/>

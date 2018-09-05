@@ -11,5 +11,5 @@ import Foundation
 protocol Feed {
     var base: String { get }
     var path: String { get }
-    func getURL() -> URL
+    func getURL() -> URL?
 }

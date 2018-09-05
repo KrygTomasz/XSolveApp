@@ -18,7 +18,11 @@ class WebService<Model: Codable> {
     
     func downloadData(completion: @escaping (Bool, Model?) -> Void) {
         print(feed.base + feed.path)
-        URLSession.shared.dataTask(with: feed.getURL()) { data, response, error in
+        guard let url = feed.getURL() else {
+            completion(false, nil)
+            return
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 NSLog(error.localizedDescription)
                 completion(false, nil)

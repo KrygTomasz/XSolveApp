@@ -24,8 +24,15 @@ class PodcastFeed: Feed {
         return "/search?term=\(termToSearch)"
     }
     
-    func getURL() -> URL {
-        return URL(string: base+path)!
+    func getURL() -> URL? {
+        let fullAddress = base+path
+        guard
+            let encodedAddress = fullAddress.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),
+            let url = URL(string: encodedAddress)
+        else {
+            return nil
+        }
+        return url
     }
     
 }
