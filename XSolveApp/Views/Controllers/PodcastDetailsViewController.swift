@@ -43,9 +43,17 @@ class PodcastDetailsViewController: UIViewController {
         }
     }
     @IBOutlet weak var artistNameLabel: UILabel!
+    @IBOutlet weak var musicButton: MusicButton! {
+        didSet {
+            musicButton.musicState = .none
+            musicButton.addTarget(self, action: #selector(onMusicButtonClicked), for: .touchUpInside)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.podcastDetailsViewModel?.musicButton = self.musicButton
+        self.podcastDetailsViewModel?.downloadMusic()
         self.prepareNavigationBar(withTitle: "podcastDetails".localized())
         self.view.backgroundColor = .backgroundColor
         updateUI()
@@ -82,6 +90,10 @@ class PodcastDetailsViewController: UIViewController {
         } else {
             self.coverContentView.isHidden = true
         }
+    }
+    
+    @objc func onMusicButtonClicked() {
+        self.podcastDetailsViewModel?.toggleMusic()
     }
 
 }

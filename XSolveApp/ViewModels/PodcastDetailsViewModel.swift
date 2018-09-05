@@ -11,7 +11,16 @@ import UIKit
 
 class PodcastDetailsViewModel {
     
+    //MARK: Properties
     private var podcastViewModel: PodcastViewModel
+    private var musicDownloader: MusicDownloader = MusicDownloader()
+    var musicButton: MusicButton?
+    
+    var musicState: MusicState = .none {
+        didSet {
+            musicButton?.musicState = musicState
+        }
+    }
     
     var trackName: String {
         guard let track = podcastViewModel.trackName else {
@@ -60,10 +69,45 @@ class PodcastDetailsViewModel {
     
     init(using podcastViewModel: PodcastViewModel) {
         self.podcastViewModel = podcastViewModel
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseMusic), name: .AVPlayerItemDidPlayToEndTime , object: musicDownloader.player)
     }
     
+    //MARK: Image
     func loadImage(completion: @escaping (UIImage?) -> Void) {
         ImageDownloader.downloadImage(from: podcastViewModel.artworkUrl100, completion: completion)
+    }
+    
+    //MARK: Music
+    func downloadMusic() {
+        self.musicState = .downloading
+        guard let previewUrl = podcastViewModel.previewUrl else { return }
+        let musicUrl = URL(string: previewUrl)!
+        musicDownloader.downloadFileFromURL(url: musicUrl) { [weak self] url in
+            DispatchQueue.main.async {
+                self?.musicState = .paused
+            }
+        }
+    }
+    
+    func toggleMusic() {
+        switch self.musicState {
+        case .playing:
+            self.pauseMusic()
+        case .paused:
+            self.playMusic()
+        default:
+            return
+        }
+    }
+    
+    private func playMusic() {
+        self.musicDownloader.playMusic()
+        self.musicState = .playing
+    }
+    
+    @objc private func pauseMusic() {
+        self.musicDownloader.pauseMusic()
+        self.musicState = .paused
     }
     
 }
