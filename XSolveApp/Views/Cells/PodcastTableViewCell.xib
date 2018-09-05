@@ -31,7 +31,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbz-kt-09K">
                                                 <rect key="frame" x="0.0" y="0.0" width="456" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -49,16 +49,16 @@
                                         <rect key="frame" x="0.0" y="24" width="456" height="88"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMb-Od-kIO">
-                                                <rect key="frame" x="8" y="0.0" width="440" height="88"/>
+                                                <rect key="frame" x="8" y="0.0" width="448" height="88"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="OMb-Od-kIO" secondAttribute="bottom" id="96f-wt-Fyx"/>
-                                            <constraint firstAttribute="trailing" secondItem="OMb-Od-kIO" secondAttribute="trailing" constant="8" id="EqZ-kc-0zI"/>
+                                            <constraint firstAttribute="trailing" secondItem="OMb-Od-kIO" secondAttribute="trailing" id="EqZ-kc-0zI"/>
                                             <constraint firstItem="OMb-Od-kIO" firstAttribute="top" secondItem="Yk5-q9-wWL" secondAttribute="top" id="GO2-dU-R0L"/>
                                             <constraint firstAttribute="height" constant="20" id="Ixz-nC-HPE"/>
                                             <constraint firstItem="OMb-Od-kIO" firstAttribute="leading" secondItem="Yk5-q9-wWL" secondAttribute="leading" constant="8" id="uVx-Vw-cZD"/>
