@@ -8,7 +8,6 @@
 
 import UIKit
 
-//MARK: Downloading image from url
 class ImageDownloader {
     
     private static func getDataFromUrl(url: URL?, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
@@ -30,9 +29,9 @@ class ImageDownloader {
             guard
                 let data = data,
                 error == nil
-                else {
-                    completion(nil)
-                    return
+            else {
+                completion(nil)
+                return
             }
             completion(UIImage(data: data))
         }

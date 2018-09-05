@@ -8,12 +8,6 @@
 
 import Foundation
 
-class PodcastList: Codable {
-    
-    var results: [Podcast] = []
-    
-}
-
 class Podcast: Codable {
     
     var artistName: String?

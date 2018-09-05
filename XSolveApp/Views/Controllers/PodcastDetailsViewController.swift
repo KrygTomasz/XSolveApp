@@ -10,8 +10,6 @@ import UIKit
 
 class PodcastDetailsViewController: UIViewController {
     
-    var podcastDetailsViewModel: PodcastDetailsViewModel?
-    
     @IBOutlet weak var containerView: UIView! {
         didSet {
             containerView.layer.cornerRadius = 12.0
@@ -49,6 +47,8 @@ class PodcastDetailsViewController: UIViewController {
             musicButton.addTarget(self, action: #selector(onMusicButtonClicked), for: .touchUpInside)
         }
     }
+    
+    var podcastDetailsViewModel: PodcastDetailsViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

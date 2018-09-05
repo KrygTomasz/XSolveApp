@@ -42,7 +42,6 @@ class MusicDownloader {
     
     func playMusic() {
         self.player?.play()
-        
     }
     
     func pauseMusic() {

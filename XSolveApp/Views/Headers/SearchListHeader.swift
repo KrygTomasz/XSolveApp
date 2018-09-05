@@ -30,12 +30,18 @@ class SearchListHeader: UITableViewHeaderFooterView {
     
 }
 
+//MARK: UITextFieldDelegate
 extension SearchListHeader: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let searchTerm = searchTextField.text ?? ""
-        delegate?.search(text: searchTerm)
-        return textField.resignFirstResponder()
+        var searchTerm = searchTextField.text ?? ""
+        searchTerm = searchTerm.trimmingCharacters(in: .whitespacesAndNewlines)
+        if searchTerm.isEmpty {
+            return false
+        } else {
+            delegate?.search(text: searchTerm)
+            return textField.resignFirstResponder()
+        }
     }
     
 }
