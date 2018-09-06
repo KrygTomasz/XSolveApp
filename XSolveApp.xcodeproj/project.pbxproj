@@ -32,6 +32,7 @@
 		2281538C213AA5FB0055C3FE /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281538B213AA5FB0055C3FE /* Feed.swift */; };
 		2281538F213AA6180055C3FE /* PodcastFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2281538E213AA6180055C3FE /* PodcastFeed.swift */; };
 		22815391213AB8D20055C3FE /* PodcastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22815390213AB8D20055C3FE /* PodcastViewModel.swift */; };
+		229AD3A72140EB800072ABD7 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229AD3A62140EB800072ABD7 /* ProgressHUD.swift */; };
 		22BE72BB213E711F0033B71A /* PodcastDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE72BA213E711F0033B71A /* PodcastDetailsViewModel.swift */; };
 		22FC353B21405F6400271908 /* PodcastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC353A21405F6400271908 /* PodcastList.swift */; };
 		22FC353D214076DD00271908 /* WSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC353C214076DD00271908 /* WSError.swift */; };
@@ -69,6 +70,7 @@
 		2281538B213AA5FB0055C3FE /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		2281538E213AA6180055C3FE /* PodcastFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastFeed.swift; sourceTree = "<group>"; };
 		22815390213AB8D20055C3FE /* PodcastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewModel.swift; sourceTree = "<group>"; };
+		229AD3A62140EB800072ABD7 /* ProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		22BE72BA213E711F0033B71A /* PodcastDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewModel.swift; sourceTree = "<group>"; };
 		22FC353A21405F6400271908 /* PodcastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastList.swift; sourceTree = "<group>"; };
 		22FC353C214076DD00271908 /* WSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSError.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				2224A50E2139D870003069C5 /* Cells */,
 				2224A5132139DCC0003069C5 /* Headers */,
 				22008347213FA2EF00BF8466 /* MusicButton.swift */,
+				229AD3A62140EB800072ABD7 /* ProgressHUD.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				2224A4F22139C8AA003069C5 /* PodcastListTableViewController.swift in Sources */,
 				221EC7A5213EBB6E00BBDA96 /* MusicDownloader.swift in Sources */,
 				22FC353D214076DD00271908 /* WSError.swift in Sources */,
+				229AD3A72140EB800072ABD7 /* ProgressHUD.swift in Sources */,
 				22FC353B21405F6400271908 /* PodcastList.swift in Sources */,
 				2224A5052139CCE6003069C5 /* PodcastListViewModel.swift in Sources */,
 				22815391213AB8D20055C3FE /* PodcastViewModel.swift in Sources */,
@@ -557,7 +561,10 @@
 				DEVELOPMENT_TEAM = 3FMVQ97S47;
 				INFOPLIST_FILE = XSolveApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kryg.XSolveApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -574,7 +581,10 @@
 				DEVELOPMENT_TEAM = 3FMVQ97S47;
 				INFOPLIST_FILE = XSolveApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kryg.XSolveApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

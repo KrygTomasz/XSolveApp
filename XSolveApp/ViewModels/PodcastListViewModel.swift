@@ -39,6 +39,7 @@ class PodcastListViewModel {
     }
     
     private func populatePodcasts() {
+        ProgressHUD.shared.showActivityIndicator(title: "\("searching".localized())...")
         webService.downloadData { result in
             switch result {
             case .failure(let error):
@@ -46,6 +47,7 @@ class PodcastListViewModel {
                 self.podcastViewModels = []
                 DispatchQueue.main.async {
                     self.completion()
+                    ProgressHUD.shared.hideActivityIndicator()
                 }
             case .success(let podcastList):
                 self.emptyViewState = .noData
@@ -53,6 +55,7 @@ class PodcastListViewModel {
                 self.podcastViewModels = podcasts.map(PodcastViewModel.init)
                 DispatchQueue.main.async {
                     self.completion()
+                    ProgressHUD.shared.hideActivityIndicator()
                 }
             }
         }

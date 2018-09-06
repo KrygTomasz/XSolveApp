@@ -19,6 +19,7 @@ class PodcastListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProgressHUD.shared.prepare(navigationController: self.navigationController)
         self.prepareNavigationBar(withTitle: "podcasts".localized())
         prepareTableView()
         self.podcastFeed = PodcastFeed(termToSearch: "Jack johnson")
