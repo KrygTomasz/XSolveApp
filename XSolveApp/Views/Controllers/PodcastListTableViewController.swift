@@ -22,11 +22,8 @@ class PodcastListTableViewController: UITableViewController {
         ProgressHUD.shared.prepare(navigationController: self.navigationController)
         self.prepareNavigationBar(withTitle: "podcasts".localized())
         prepareTableView()
-        self.podcastFeed = PodcastFeed(termToSearch: "Jack johnson")
-        self.webService = WebService<PodcastList>(feed: podcastFeed)
-        self.podcastListViewModel = PodcastListViewModel(webService: self.webService) {
-            self.prepareDataSource()
-        }
+        self.podcastListViewModel = PodcastListViewModel(webService: nil) {}
+        self.prepareDataSource()
     }
     
     private func prepareTableView() {

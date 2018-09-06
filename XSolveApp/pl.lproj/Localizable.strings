@@ -15,3 +15,4 @@
 "jsonDecodingFailure" = "Błąd podczas dekodowania pliku JSON – sprawdź zmienne modelu";
 "noPodcasts" = "Nie znaleziono żadnych podcastów. Spróbuj zmienić zapytanie";
 "searching" = "Wyszukuję";
+"firstLaunchInfo" = "Użyj wyszukiwarki powyżej, aby znaleźć interesujący Cię podcast";

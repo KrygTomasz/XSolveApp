@@ -15,3 +15,4 @@
 "jsonDecodingFailure" = "JSON decoding failure – check model properties";
 "noPodcasts" = "No podcasts found. Try to change query";
 "searching" = "Searching";
+"firstLaunchInfo" = "Use search field above to browse through podcasts";

@@ -18,30 +18,30 @@ enum PodcastEmptyViewState {
 class PodcastListViewModel {
     
     var podcastViewModels: [PodcastViewModel] = [PodcastViewModel]()
-    var webService: WebService<PodcastList>
+    var webService: WebService<PodcastList>?
     var completion: () -> Void
     var emptyViewMessage: String {
         switch emptyViewState {
         case .firstLaunch:
-            return ""
+            return "firstLaunchInfo".localized()
         case .noData:
             return "noPodcasts".localized()
         case .failure(let error):
-            print(error.localizedDescription)
             return error.localizedDescription
         }
     }
     private var emptyViewState: PodcastEmptyViewState = .firstLaunch
     
-    init(webService: WebService<PodcastList>, completion: @escaping () -> Void) {
+    init(webService: WebService<PodcastList>?, completion: @escaping () -> Void) {
         self.webService = webService
         self.completion = completion
         self.populatePodcasts()
     }
     
     private func populatePodcasts() {
+        guard let _ = webService else { return }
         ProgressHUD.shared.showActivityIndicator(title: "\("searching".localized())...")
-        webService.downloadData { result in
+        webService?.downloadData { result in
             switch result {
             case .failure(let error):
                 self.emptyViewState = .failure(error)
