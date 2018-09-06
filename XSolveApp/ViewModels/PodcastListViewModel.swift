@@ -17,6 +17,7 @@ enum PodcastEmptyViewState {
 
 class PodcastListViewModel {
     
+    //MARK: Properties
     var podcastViewModels: [PodcastViewModel] = [PodcastViewModel]()
     var webService: WebService<PodcastList>?
     var completion: () -> Void
@@ -32,12 +33,14 @@ class PodcastListViewModel {
     }
     private var emptyViewState: PodcastEmptyViewState = .firstLaunch
     
+    //MARK: Initializer
     init(webService: WebService<PodcastList>?, completion: @escaping () -> Void) {
         self.webService = webService
         self.completion = completion
         self.populatePodcasts()
     }
     
+    //MARK: Podcasts management methods
     private func populatePodcasts() {
         guard let _ = webService else { return }
         ProgressHUD.shared.showActivityIndicator(title: "\("searching".localized())...")

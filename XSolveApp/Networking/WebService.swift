@@ -10,7 +10,7 @@ import Foundation
 
 class WebService<Model: Codable> {
     
-    typealias WebSericeDownloadDataCompletion = (Result<Model, WSError>) -> Void
+    typealias WebSericeDownloadDataCompletion = (WSResult<Model, WSError>) -> Void
     
     private var feed: Feed
     
@@ -20,26 +20,26 @@ class WebService<Model: Codable> {
     
     func downloadData(completion: @escaping WebSericeDownloadDataCompletion) {
         guard let url = feed.getURL() else {
-            completion(Result.failure(.wrongUrl))
+            completion(WSResult.failure(.wrongUrl))
             return
         }
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let error = error {
                 NSLog(error.localizedDescription)
-                completion(Result.failure(.serviceError))
+                completion(WSResult.failure(.serviceError))
                 return
             }
             guard let data = data else {
-                completion(Result.failure(.invalidData))
+                completion(WSResult.failure(.invalidData))
                 return
             }
             do {
                 let model = try JSONDecoder().decode(Model.self, from: data)
-                completion(Result.success(model))
+                completion(WSResult.success(model))
                 return
             } catch let jsonError {
                 NSLog(jsonError.localizedDescription)
-                completion(Result.failure(.jsonDecodingFailure))
+                completion(WSResult.failure(.jsonDecodingFailure))
                 return
             }
         }.resume()

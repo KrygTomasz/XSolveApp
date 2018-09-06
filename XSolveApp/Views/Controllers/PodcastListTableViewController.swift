@@ -102,14 +102,18 @@ extension PodcastListTableViewController: SearchListHeaderDelegate {
 
 //MARK: UIEmptyStateDelegates
 extension PodcastListTableViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
+    
     var emptyStateTitle: NSAttributedString {
         return NSAttributedString(string: podcastListViewModel.emptyViewMessage, attributes: [NSAttributedStringKey.foregroundColor: UIColor.white])
     }
+    
     var emptyStateImage: UIImage? {
         let image = #imageLiteral(resourceName: "podcastIcon").withRenderingMode(.alwaysTemplate)
         return image
     }
+    
     var emptyStateImageViewTintColor: UIColor? {
         return UIColor.white
     }
+    
 }

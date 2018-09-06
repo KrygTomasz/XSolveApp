@@ -72,12 +72,12 @@ class PodcastDetailsViewModel {
         NotificationCenter.default.addObserver(self, selector: #selector(pauseMusic), name: .AVPlayerItemDidPlayToEndTime , object: musicDownloader.player)
     }
     
-    //MARK: Image
+    //MARK: Image loading method
     func loadImage(completion: @escaping (UIImage?) -> Void) {
         ImageDownloader.downloadImage(from: podcastViewModel.artworkUrl100, completion: completion)
     }
     
-    //MARK: Music
+    //MARK: Music management methods
     func downloadMusic() {
         self.musicState = .downloading
         guard let previewUrl = podcastViewModel.previewUrl else { return }

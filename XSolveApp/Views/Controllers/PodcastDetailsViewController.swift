@@ -61,7 +61,7 @@ class PodcastDetailsViewController: UIViewController {
     
     private func updateUI() {
         prepareData()
-        prepareViews()
+        hideEmptyViews()
     }
     
     private func prepareData() {
@@ -77,7 +77,7 @@ class PodcastDetailsViewController: UIViewController {
         }
     }
     
-    private func prepareViews() {
+    private func hideEmptyViews() {
         guard let vm = podcastDetailsViewModel else { return }
         collectionContentView.isHidden = vm.collectionIsHidden
         artistContentView.isHidden = vm.artistIsHidden
@@ -100,6 +100,7 @@ class PodcastDetailsViewController: UIViewController {
 
 //MARK: Constructor
 extension PodcastDetailsViewController {
+    
     static func getInstance(using podcastDetailsViewModel: PodcastDetailsViewModel) -> PodcastDetailsViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let podcastDetailsVC = storyboard.instantiateViewController(withIdentifier: "PodcastDetailsViewController") as? PodcastDetailsViewController else {
@@ -108,4 +109,5 @@ extension PodcastDetailsViewController {
         podcastDetailsVC.podcastDetailsViewModel = podcastDetailsViewModel
         return podcastDetailsVC
     }
+    
 }

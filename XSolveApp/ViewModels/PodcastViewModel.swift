@@ -11,6 +11,7 @@ import UIKit
 
 class PodcastViewModel {
     
+    //MARK: Properties
     var artistName: String?
     var collectionName: String?
     var trackName: String?
@@ -20,6 +21,7 @@ class PodcastViewModel {
     var trackPrice: Double?
     var currency: String?
     
+    //MARK: Initializer
     init(podcast: Podcast) {
         self.artistName = podcast.artistName
         self.collectionName = podcast.collectionName
@@ -31,7 +33,7 @@ class PodcastViewModel {
         self.currency = podcast.currency
     }
     
-    //MARK: Image
+    //MARK: Image loading method
     func loadImage(completion: @escaping (UIImage?) -> Void) {
         ImageDownloader.downloadImage(from: artworkUrl60, completion: completion)
     }

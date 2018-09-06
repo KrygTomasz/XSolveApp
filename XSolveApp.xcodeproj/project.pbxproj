@@ -36,7 +36,7 @@
 		22BE72BB213E711F0033B71A /* PodcastDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BE72BA213E711F0033B71A /* PodcastDetailsViewModel.swift */; };
 		22FC353B21405F6400271908 /* PodcastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC353A21405F6400271908 /* PodcastList.swift */; };
 		22FC353D214076DD00271908 /* WSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC353C214076DD00271908 /* WSError.swift */; };
-		22FC353F214076EA00271908 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC353E214076EA00271908 /* Result.swift */; };
+		22FC353F214076EA00271908 /* WSResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FC353E214076EA00271908 /* WSResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +74,7 @@
 		22BE72BA213E711F0033B71A /* PodcastDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastDetailsViewModel.swift; sourceTree = "<group>"; };
 		22FC353A21405F6400271908 /* PodcastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastList.swift; sourceTree = "<group>"; };
 		22FC353C214076DD00271908 /* WSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSError.swift; sourceTree = "<group>"; };
-		22FC353E214076EA00271908 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		22FC353E214076EA00271908 /* WSResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSResult.swift; sourceTree = "<group>"; };
 		8A04BAF935E04FEFF9CE5DD7 /* Pods_XSolveApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XSolveApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADF5BD24F85C152A5C41929 /* Pods-XSolveApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XSolveApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-XSolveApp/Pods-XSolveApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,7 +183,7 @@
 				2281538D213AA60A0055C3FE /* Feeds */,
 				2224A5062139CE3E003069C5 /* WebService.swift */,
 				22FC353C214076DD00271908 /* WSError.swift */,
-				22FC353E214076EA00271908 /* Result.swift */,
+				22FC353E214076EA00271908 /* WSResult.swift */,
 				2224A51A2139F4AD003069C5 /* ImageDownloader.swift */,
 				221EC7A4213EBB6E00BBDA96 /* MusicDownloader.swift */,
 			);
@@ -396,7 +396,7 @@
 				22FC353B21405F6400271908 /* PodcastList.swift in Sources */,
 				2224A5052139CCE6003069C5 /* PodcastListViewModel.swift in Sources */,
 				22815391213AB8D20055C3FE /* PodcastViewModel.swift in Sources */,
-				22FC353F214076EA00271908 /* Result.swift in Sources */,
+				22FC353F214076EA00271908 /* WSResult.swift in Sources */,
 				2281538C213AA5FB0055C3FE /* Feed.swift in Sources */,
 				2224A4F02139C8AA003069C5 /* AppDelegate.swift in Sources */,
 				2224A51B2139F4AD003069C5 /* ImageDownloader.swift in Sources */,

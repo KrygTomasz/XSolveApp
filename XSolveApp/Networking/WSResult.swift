@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  WSResult.swift
 //  XSolveApp
 //
 //  Created by Kryg Tomasz on 05.09.2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Result<T, E> where E: Error {
+enum WSResult<T, E> where E: Error {
     case success(T)
     case failure(E)
 }
