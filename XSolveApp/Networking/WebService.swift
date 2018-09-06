@@ -19,7 +19,6 @@ class WebService<Model: Codable> {
     }
     
     func downloadData(completion: @escaping WebSericeDownloadDataCompletion) {
-        print(feed.base + feed.path)
         guard let url = feed.getURL() else {
             completion(Result.failure(.wrongUrl))
             return
@@ -28,6 +27,7 @@ class WebService<Model: Codable> {
             if let error = error {
                 NSLog(error.localizedDescription)
                 completion(Result.failure(.serviceError))
+                return
             }
             guard let data = data else {
                 completion(Result.failure(.invalidData))
@@ -36,9 +36,11 @@ class WebService<Model: Codable> {
             do {
                 let model = try JSONDecoder().decode(Model.self, from: data)
                 completion(Result.success(model))
+                return
             } catch let jsonError {
                 NSLog(jsonError.localizedDescription)
                 completion(Result.failure(.jsonDecodingFailure))
+                return
             }
         }.resume()
     }

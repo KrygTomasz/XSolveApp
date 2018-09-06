@@ -10,7 +10,7 @@
 "podcastDetails" = "Szczegóły podcastu";
 "search" = "Szukaj";
 "wrongUrlAddress" = "Błędny adres URL";
-"errorFromWS" = "Błąd z usługi";
+"errorFromWS" = "Błąd połączenia z usługą";
 "invalidData" = "Niepoprawne dane";
 "jsonDecodingFailure" = "Błąd podczas dekodowania pliku JSON – sprawdź zmienne modelu";
 "noPodcasts" = "Nie znaleziono żadnych podcastów. Spróbuj zmienić zapytanie";

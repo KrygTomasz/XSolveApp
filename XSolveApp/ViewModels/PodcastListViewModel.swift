@@ -12,7 +12,7 @@ import UIKit
 enum PodcastEmptyViewState {
     case firstLaunch
     case noData
-    case failure(Error)
+    case failure(WSError)
 }
 
 class PodcastListViewModel {
@@ -27,6 +27,7 @@ class PodcastListViewModel {
         case .noData:
             return "noPodcasts".localized()
         case .failure(let error):
+            print(error.localizedDescription)
             return error.localizedDescription
         }
     }

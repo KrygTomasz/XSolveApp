@@ -131,7 +131,7 @@
 		2224A4EE2139C8AA003069C5 /* XSolveApp */ = {
 			isa = PBXGroup;
 			children = (
-				221EC793213EB27F00BBDA96 /* Extensions */,
+				229AD3A82140F1AF0072ABD7 /* Common */,
 				22815388213A91B30055C3FE /* DataSource */,
 				2224A50C2139D84B003069C5 /* Networking */,
 				2224A50B2139D841003069C5 /* Views */,
@@ -173,7 +173,6 @@
 				2224A50E2139D870003069C5 /* Cells */,
 				2224A5132139DCC0003069C5 /* Headers */,
 				22008347213FA2EF00BF8466 /* MusicButton.swift */,
-				229AD3A62140EB800072ABD7 /* ProgressHUD.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +232,15 @@
 				2281538E213AA6180055C3FE /* PodcastFeed.swift */,
 			);
 			path = Feeds;
+			sourceTree = "<group>";
+		};
+		229AD3A82140F1AF0072ABD7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				229AD3A62140EB800072ABD7 /* ProgressHUD.swift */,
+				221EC793213EB27F00BBDA96 /* Extensions */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		A278B0EC2540E5A99CC17483 /* Frameworks */ = {
